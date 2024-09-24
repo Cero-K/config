@@ -1,0 +1,10 @@
+ 88888888b  888888ba   88888888b    d8888b.
+ 88         88    `8b  88               `88
+a88aaaa    a88aaaa8P' a88aaaa       .aaadP'
+ 88         88         88           88'
+ 88         88         88           88.
+ dP         dP         dP           Y88888P
+
+
+${federación de Futbol} ${v1.0.0}
+Powered by Spring Boot ${spring-boot.version}

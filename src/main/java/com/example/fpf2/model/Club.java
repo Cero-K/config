@@ -1,0 +1,36 @@
+package com.example.fpf2.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.io.Serial;
+import java.io.Serializable;
+import java.util.List;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name = "clubes")
+public class Club implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String nombre;
+
+    @OneToMany(targetEntity = Jugador.class, fetch = FetchType.LAZY, mappedBy = "club")
+    @JsonIgnore
+    privateList<Jugador> listaJugadores;
+
+    @OneToOne(targetEntity = Tecnico.class, cascade = CascadeType.PERSIST)
+    Tecnico tecnico;
+
+    @ManyToMany(targetEntity = Torneo.class)
+    @JsonIgnore
+    private List<Torneo> listaTorneos;
+}
